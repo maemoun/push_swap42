@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_nbrs.c                                      :+:      :+:    :+:   */
+/*   ft_check_errors.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maeskhai <maeskhai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/28 14:41:53 by maeskhai          #+#    #+#             */
-/*   Updated: 2025/03/28 17:28:48 by maeskhai         ###   ########.fr       */
+/*   Created: 2025/03/28 17:06:38 by maeskhai          #+#    #+#             */
+/*   Updated: 2025/03/28 17:27:36 by maeskhai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-void    ft_get_nbrs(char **tab, int size, int *arr)
+char **ft_check_errors(int ac, char **av, int *size)
 {
-    int i = 0;
+	char *str;
+	char **tab;
+	int i;
 
-	if (size == 1)
+	str = ft_strjoin(ac, av);
+	tab = ft_split(str);
+	free(str);
+	if (!tab)
+		exit(1);
+	i = 0;
+	while (tab[i])
+		i++;
+	*size = i;
+	if (ft_validate(tab) == 0)
 	{
 		ft_free(tab);
-        free(arr);
-		exit(0);
+		ft_pr_error("Error!\n", NULL);
 	}
-    while (i < size)
-	{
-		arr[i] = ft_atoi(tab[i], tab, arr);
-		i++;
-	}
+	return tab;
 }
