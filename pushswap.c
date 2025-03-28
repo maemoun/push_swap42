@@ -6,7 +6,7 @@
 /*   By: maeskhai <maeskhai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 13:36:56 by maeskhai          #+#    #+#             */
-/*   Updated: 2025/03/28 17:32:28 by maeskhai         ###   ########.fr       */
+/*   Updated: 2025/03/28 18:31:56 by maeskhai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,31 @@
 
 void    hh()
 {
+	printf("\n");
     system("leaks -q program");
 }
 
 
+// void	ft_init_stack(t_list **stack, int *tab, int size)
+// {
+// 	t_list	*new_node;
+// 	int		i;
 
+// 	i = 0;
+// 	while (i < size)
+// 	{
+// 		new_node = 
+// 	}
+// }
 
 int main(int ac, char **av)
 {
 	atexit(hh); //leaks testing
-	int *arr;
-	int size = 0;
-	char **tab;
+	int		*arr;
+	int		size;
+	char	**tab;
+	t_list	*stack_a;
+	t_list	*stack_b;
 
 	if (ac >= 2)
 	{
@@ -40,5 +53,8 @@ int main(int ac, char **av)
 		ft_free(tab);
 		ft_dup_nbrs(arr, size);
 		ft_check_is_sorted(arr, size);
-
+		stack_a = NULL;
+		stack_b = NULL;
+		ft_init_stack(stack_a, arr, size); // khadamin hnaya
+	}
 }

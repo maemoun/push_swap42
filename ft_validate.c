@@ -6,7 +6,7 @@
 /*   By: maeskhai <maeskhai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 17:57:25 by maeskhai          #+#    #+#             */
-/*   Updated: 2025/03/20 20:01:03 by maeskhai         ###   ########.fr       */
+/*   Updated: 2025/03/28 17:49:15 by maeskhai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,20 @@ static int	ft_isdigit(char c)
 	return(0);
 }
 
+int	ft_vali1(char c)
+{
+	if(c == '-' || c == '+')
+	{
+		if (!ft_isdigit(c)|| c == '\0')
+			return(0);
+	}
+	return 1;
+}
+
 int	ft_validate(char **tab)
 {
 	int i;
 	int j;
-	int k;
 
 	i = 0;
 	j = 0;
@@ -39,13 +48,10 @@ int	ft_validate(char **tab)
 				if (tab[i][j + 1] && !ft_isdigit(tab[i][j + 1]))
 					return(0);
 			}
-			else if(tab[i][j] == '-' || tab[i][j] == '+')
-			{
-				if (!ft_isdigit(tab[i][j + 1]) || !tab[i][j  + 1])
-					return(0);
-			}
+			else if ((tab[i][j] == '-' || tab[i][j] == '+') && (ft_vali1(tab[i][j + 1]) == 0))
+				return(0);
 			else
-					return(0);
+				return(0);
 			j++;
 		}
 		i++;

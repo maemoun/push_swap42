@@ -6,7 +6,7 @@
 /*   By: maeskhai <maeskhai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 17:06:38 by maeskhai          #+#    #+#             */
-/*   Updated: 2025/03/28 17:27:36 by maeskhai         ###   ########.fr       */
+/*   Updated: 2025/03/28 17:53:14 by maeskhai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ char **ft_check_errors(int ac, char **av, int *size)
 	if (!tab)
 		exit(1);
 	i = 0;
+	*size = 0;
 	while (tab[i])
 		i++;
 	*size = i;

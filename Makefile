@@ -3,4 +3,4 @@
 
 all:
 	clear
-	gcc *.c -o program
+	gcc -Wall -Wextra -Werror *.c -o program
