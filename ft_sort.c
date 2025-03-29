@@ -6,7 +6,7 @@
 /*   By: maeskhai <maeskhai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 19:59:44 by maeskhai          #+#    #+#             */
-/*   Updated: 2025/03/28 20:53:57 by maeskhai         ###   ########.fr       */
+/*   Updated: 2025/03/29 20:50:01 by maeskhai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,29 @@ void	ft_sort_four(t_list **stack_a, t_list **stack_b)
 	pa(stack_a, stack_b);
 }
 
+void	ft_sort_five(t_list **stack_a, t_list **stack_b)
+{
+	int min_pos;
+
+	min_pos = ft_get_min_pos(stack_a);
+	if(min_pos == 1)
+		pb(stack_b, stack_a);
+	else
+	{
+		if (min_pos == 3)
+			ra(stack_a);
+		if (min_pos == 2 || min_pos == 3)
+			sa(stack_a);
+		if (min_pos == 4)
+			rra(stack_a);
+		if (min_pos == 5)
+			rra(stack_a);
+		pb(stack_b, stack_a);
+	}
+	ft_sort_four(stack_a, stack_b);
+	pa(stack_a, stack_b);
+}
+
 void	ft_sort(t_list **stack_a, t_list **stack_b, int size)
 {
 	(void)stack_b;
@@ -71,4 +94,6 @@ void	ft_sort(t_list **stack_a, t_list **stack_b, int size)
 		ft_sort_three(stack_a);
 	else if (size == 4)
 		ft_sort_four(stack_a, stack_b);
+	else if (size == 5)
+		ft_sort_five(stack_a, stack_b);
 }
