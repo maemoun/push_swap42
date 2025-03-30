@@ -6,7 +6,7 @@
 /*   By: maeskhai <maeskhai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 18:21:23 by maeskhai          #+#    #+#             */
-/*   Updated: 2025/03/28 18:26:30 by maeskhai         ###   ########.fr       */
+/*   Updated: 2025/03/30 11:56:48 by maeskhai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ t_list	*ft_lstnew(int nbr)
 	if (!new_node)
 		return (NULL);
 	new_node->value = nbr;
+	new_node->index = -1;
 	new_node->next = NULL;
 	return (new_node);
 }

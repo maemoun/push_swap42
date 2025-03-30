@@ -6,7 +6,7 @@
 /*   By: maeskhai <maeskhai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 17:57:25 by maeskhai          #+#    #+#             */
-/*   Updated: 2025/03/28 17:49:15 by maeskhai         ###   ########.fr       */
+/*   Updated: 2025/03/30 12:44:18 by maeskhai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,8 @@ static int	ft_isdigit(char c)
 
 int	ft_vali1(char c)
 {
-	if(c == '-' || c == '+')
-	{
-		if (!ft_isdigit(c)|| c == '\0')
-			return(0);
-	}
+	if (!ft_isdigit(c) || c == '\0')
+		return(0);
 	return 1;
 }
 
@@ -49,8 +46,6 @@ int	ft_validate(char **tab)
 					return(0);
 			}
 			else if ((tab[i][j] == '-' || tab[i][j] == '+') && (ft_vali1(tab[i][j + 1]) == 0))
-				return(0);
-			else
 				return(0);
 			j++;
 		}

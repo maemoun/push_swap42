@@ -6,7 +6,7 @@
 /*   By: maeskhai <maeskhai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 17:06:38 by maeskhai          #+#    #+#             */
-/*   Updated: 2025/03/28 17:53:14 by maeskhai         ###   ########.fr       */
+/*   Updated: 2025/03/30 13:37:25 by maeskhai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char **ft_check_errors(int ac, char **av, int *size)
 	if (ft_validate(tab) == 0)
 	{
 		ft_free(tab);
-		ft_pr_error("Error!\n", NULL);
+		ft_pr_error("Error\n", NULL);
 	}
 	return tab;
 }

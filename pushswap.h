@@ -6,7 +6,7 @@
 /*   By: maeskhai <maeskhai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 13:37:13 by maeskhai          #+#    #+#             */
-/*   Updated: 2025/03/28 20:24:26 by maeskhai         ###   ########.fr       */
+/*   Updated: 2025/03/30 13:03:26 by maeskhai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,11 @@
 
 typedef struct s_list {
     int value;
+    int index;
     struct s_list *next;
 } t_list;
 
-char **ft_check_errors(int ac, char **av, int *size);
+char    **ft_check_errors(int ac, char **av, int *size);
 char    *ft_strjoin(int ac, char **av);
 char    **ft_split(char *s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
@@ -44,6 +45,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 
 
 void    ft_sort(t_list **stack_a, t_list **stack_b, int size);
+void    ft_sort_range(t_list **stack_a, t_list **stack_b, int size);
 
 
 void	sa(t_list **stack);
@@ -55,7 +57,8 @@ void	pb(t_list **stack_b, t_list **stack_a);
 void	rb(t_list **stack);
 void	rrb(t_list **stack);
 
-int	ft_get_min_pos(t_list **stack);
+int     ft_get_min_pos(t_list **stack);
+void    ft_index_stack(t_list **stack);
 
 
 

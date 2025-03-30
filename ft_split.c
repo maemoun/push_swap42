@@ -6,7 +6,7 @@
 /*   By: maeskhai <maeskhai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 13:45:59 by maeskhai          #+#    #+#             */
-/*   Updated: 2025/03/28 13:36:45 by maeskhai         ###   ########.fr       */
+/*   Updated: 2025/03/30 12:47:13 by maeskhai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ char    **ft_split(char *s)
 		return(NULL);
 	word = ft_word(s);
 	if (word == 0)
-		ft_pr_error("Error!\nEmpty Input..!\n", NULL);
+		ft_pr_error("Error\n", NULL);
 	arr = malloc((word + 1) * 8);
 	if (!arr)
 		return(NULL);

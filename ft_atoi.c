@@ -6,7 +6,7 @@
 /*   By: maeskhai <maeskhai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 14:48:33 by maeskhai          #+#    #+#             */
-/*   Updated: 2025/03/28 16:03:23 by maeskhai         ###   ########.fr       */
+/*   Updated: 2025/03/30 13:37:04 by maeskhai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	ft_atoi(const char *str, char **tab, int *arr)
         {
             ft_free(tab);
             free(arr);
-            ft_pr_error("Error!\n", NULL);
+            ft_pr_error("Error\n", NULL);
         }
 		i++;
 	}

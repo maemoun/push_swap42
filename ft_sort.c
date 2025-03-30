@@ -6,7 +6,7 @@
 /*   By: maeskhai <maeskhai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 19:59:44 by maeskhai          #+#    #+#             */
-/*   Updated: 2025/03/29 20:50:01 by maeskhai         ###   ########.fr       */
+/*   Updated: 2025/03/30 13:02:04 by maeskhai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void	ft_sort_five(t_list **stack_a, t_list **stack_b)
 			sa(stack_a);
 		if (min_pos == 4)
 			rra(stack_a);
-		if (min_pos == 5)
+		if (min_pos == 5 || min_pos == 4)
 			rra(stack_a);
 		pb(stack_b, stack_a);
 	}
@@ -96,4 +96,6 @@ void	ft_sort(t_list **stack_a, t_list **stack_b, int size)
 		ft_sort_four(stack_a, stack_b);
 	else if (size == 5)
 		ft_sort_five(stack_a, stack_b);
+	else if (size >= 6)
+		ft_sort_range(stack_a, stack_b, size);
 }
